@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="ShelfBase">
+        <defName>ShelfConnected</defName>
+        <label>Connected Shelves</label>
+        <description>A shelf for storing miscellaneous items. Items stored in this will not deteriorate, even if outside. Individual shelves connect to each other.</description>
+        <thingClass>Building_Storage</thingClass>
+        <category>Building</category>
+        <graphicData>
+            <texPath>ConnectedShelf/ConnectedShelves_Textures</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+    	      <linkType>CornerFiller</linkType>
+            <linkFlags><li>Custom2</li></linkFlags> 
+        </graphicData>
+
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <fillPercent>0.4</fillPercent>
+        <castEdgeShadows>true</castEdgeShadows>
+
+    	<building>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Chunks</li>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                    <disallowedThingDefs MayRequire="Ludeon.RimWorld.Biotech">
+                        <li MayRequire="Ludeon.RimWorld.Biotech">Wastepack</li>
+                    </disallowedThingDefs>
+                    <specialFiltersToDisallow>
+                        <li>AllowLargeCorpses</li>
+                    </specialFiltersToDisallow>
+                </filter>
+            </fixedStorageSettings>
+            <isInert>true</isInert>
+            <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+            <blueprintGraphicData>
+                <texPath>ConnectedShelf/Barricade_Blueprint_Atlas</texPath>
+            </blueprintGraphicData>
+        </building>
+
+    	<uiIconPath>ConnectedShelf/ConnectedShelves_MenuIcon</uiIconPath>
+
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToBuild>400</WorkToBuild>
+            <Mass>6</Mass>
+            <Flammability>1.0</Flammability>
+            <Beauty>0</Beauty>
+        </statBases>
+
+    	<stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+            <li>Stony</li>
+        </stuffCategories>
+
+        <size>(1,1)</size>
+        <costStuffCount>25</costStuffCount>
+        <pathCost>30</pathCost>
+        <rotatable>false</rotatable>
+    	<uiIconScale>0.8</uiIconScale>
+    	<placingDraggableDimensions>2</placingDraggableDimensions>
+
+        <researchPrerequisites>
+            <li>ComplexFurniture</li>
+        </researchPrerequisites>
+
+    </ThingDef>
+</Defs>
